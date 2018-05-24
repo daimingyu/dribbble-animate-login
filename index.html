@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Layout1</title>
+<script src="js/jquery.js"></script>
+<script>
+function a(object,direction,speed){
+	if(direction=='left')
+	{
+		object.animate({
+			left:'-='+speed
+		},'fast',"swing");
+		object.animate({
+			left:'+=50'
+		},'fast');
+		object.animate({
+			left:'-=3'	
+		},100);
+		object.animate({
+			left:'+=3'	
+		},100);
+	}
+	if(direction=='right')
+	{
+		object.animate({
+			left:'+='+speed
+		},'fast',"swing");
+		object.animate({
+			left:'-=50'
+		},'fast');
+		object.animate({
+			left:'+=3'	
+		},100);
+		object.animate({
+			left:'-=3'	
+		},100);
+	}
+}
+
+
+
+$(function(){
+	$("#sign_up_button").click(function(){
+		$(this).attr({"disabled":"disabled"});//按钮禁用
+		a($(".form_container"),'left',500);
+		$("#login_button").removeAttr("disabled");//按钮解禁
+	});
+	$("#login_button").click(function(){
+		$(this).attr({"disabled":"disabled"});
+		a($(".form_container"),'right',500);
+		$("#sign_up_button").removeAttr("disabled");
+	});
+});
+
+$(function(){
+	$("#sign_up_button").click(function(){
+		$(".login_form").hide(10);
+		$(".sign_up_form").show(10);
+	});
+	$("#login_button").click(function(){
+		$(".sign_up_form").hide(10);
+		$(".login_form").show(10);
+	});
+});
+
+$(function(){
+	$('.form_container .login_form button').click(function(){
+		return false;
+	});
+
+	$('.form_container .sign_up_form button').click(function(){
+		return false;
+	});
+})
+
+</script>
+<style>
+input{
+	outline:none;
+	display:block;
+}
+button{
+	outline:none;
+}
+html{
+	padding:0;
+	margin:0;
+}
+body{
+	width：100%;
+	min-width: 1200px;
+	min-height: 500px;
+	margin:0;
+	padding:0;
+}
+@font-face{
+	font-family:roboto-light;
+	src:url(fonts/Roboto-Light.ttf);
+}
+.shape{
+	height:400px;
+	width:1000px;
+	background:rgba(0,0,0,0);
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-500px;
+	margin-top:-200px;
+}
+.shape .sign_up_container{
+	position:absolute;
+	height:400px;
+	width:500px;
+	background:url(photos/window.png);
+}
+.shape .login_container{
+	position:absolute;
+	height:400px;
+	width:500px;
+	right:0;
+	background:url(photos/window.png);
+}
+.shape .sign_up_container .sign_up{
+	position:absolute;
+	height:auto;
+	width:400px;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	background:rgba(0,0,0,0.00);
+}
+.shape .sign_up_container .sign_up h2{
+	font-family:roboto-light;
+	color:rgba(255,255,255,1.00);
+	letter-spacing: 3px;
+}
+.shape .sign_up_container .sign_up p{
+	font-family:roboto-light;
+	color:rgba(255,255,255,1.00);
+	letter-spacing: 1px;
+}
+.shape .sign_up_container .sign_up #sign_up_button{
+	width:150px;
+	height:40px;
+	background:rgba(255,255,255,.2);
+	color:rgba(255,255,255,1);
+	border:2px solid rgba(255,255,255,1.00);
+	cursor:pointer;
+	margin-top:20px;
+	transition:all 0.2s;
+	letter-spacing: 2px;
+}
+.shape .sign_up_container .sign_up #sign_up_button:hover{
+	background:white;
+	color:black;
+}
+.shape .login_container .login{
+	position:absolute;
+	height:auto;
+	width:400px;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	background:rgba(0,0,0,0.00);
+}
+.shape .login_container .login h2{
+	font-family:roboto-light;
+	color:rgba(255,255,255,1.00);
+	letter-spacing: 3px;
+}
+.shape .login_container .login p{
+	font-family:roboto-light;
+	color:rgba(255,255,255,1.00);
+	letter-spacing: 1px;
+}
+.shape .login_container .login #login_button{
+	width:150px;
+	height:40px;
+	background:rgba(255,255,255,.2);
+	color:rgba(255,255,255,1.00);
+	border:2px solid rgba(255,255,255,1.00);
+	cursor:pointer;
+	margin-top:20px;
+	transition:all 0.2s;
+	letter-spacing: 2px;
+}
+.shape .login_container .login #login_button:hover{
+	background:white;
+	color:black;
+}
+.form_container{
+	padding:0;
+	height:450px;
+	width:450px;
+	background:#FFFFFF;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-225px;
+	border:none;
+}
+.form_container .sign_up_form{
+	display:none;
+	width: 100%;
+	height: auto;
+}
+.form_container .sign_up_form h2{
+	font-family:roboto-light;
+	color:rgba(251,146,148,1.00);
+	margin-top:100px;
+	margin-left:50px;
+	letter-spacing: 2px;
+}
+.form_container .sign_up_form .input_lebal{
+	position:relative;
+	height:35px;
+	width:350px;
+	margin:20px auto;
+}
+.form_container .sign_up_form .input_lebal img{
+	position:absolute;
+	height:35px;
+	width:35px;
+	right:0;
+	top:0;
+}
+.form_container .sign_up_form input{
+    height:35px;
+	width:350px;
+	border:none;
+	background:none;
+	outline:none;
+	border-bottom:2px solid rgba(210,210,210,1.00);
+	color:black;
+}
+::-webkit-input-placeholder {
+	color:#dddddd;
+}
+.form_container .sign_up_form button{
+	height:40px;
+	width:150px;
+	border:none;
+	cursor:pointer;
+	background:rgba(249,126,128,1.00);
+	margin-top:20px;
+	margin-left:250px;
+	color:rgba(249,249,249,1.00);
+	letter-spacing: 2px;
+	transition: all .2S;
+}
+.form_container .sign_up_form button:hover{
+	background: rgb(255, 145, 147);
+}
+.form_container .login_form{
+	width: 100%;
+	height: auto;
+}
+.form_container .login_form h2{
+	font-family:roboto-light;
+	color:rgba(251,146,148,1.00);
+	margin-top:100px;
+	margin-left:50px;
+	letter-spacing: 2px;
+}
+.form_container .login_form .input_lebal{
+	position:relative;
+	height:35px;
+	width:350px;
+	margin:20px auto;
+}
+.form_container .login_form .input_lebal img{
+	position:absolute;
+	height:35px;
+	width:35px;
+	right:0;
+	top:0;
+}
+.form_container .login_form input{
+    height:35px;
+	width:350px;
+	border:none;
+	background:none;
+	outline:none;
+	border-bottom:2px solid #dddddd;
+	color:black;
+}
+::-webkit-input-placeholder {
+	color:#dddddd;
+}
+:-moz-placeholder {
+	color: #dddddd; 
+} 
+::-moz-placeholder {
+	color: #dddddd; 
+} 
+:-ms-input-placeholder {
+	color: #dddddd; 
+} 
+.form_container .login_form button{
+	height:40px;
+	width:150px;
+	border:none;
+	cursor:pointer;
+	background:rgba(249,126,128,1.00);
+	margin-top:20px;
+	margin-left:250px;
+	color:rgba(249,249,249,1.00);
+	letter-spacing: 2px;
+	transition: all .2S;
+}
+.form_container .login_form button:hover{
+	background: rgb(255, 145, 147);
+}
+
+.bg{
+	display:block;
+	width:100%;
+	min-width: 1200px;
+}
+</style>
+</head>
+
+<body>
+<div class="shape">
+    <div class="sign_up_container">
+    	<div class="sign_up">
+        	<h2>Don't Have an <br/>account?</h2>
+            <p>If you do not have an account, you can register one by clicking the registration button below. I wish you all the best when registering.</p>
+            <button id="sign_up_button">SIGN UP</button>
+        </div>
+    </div>
+    <div class="login_container">
+    	<div class="login">
+        	<h2>Have an account?</h2>
+            <p>If you already have a local account, you can click on the landing button to login when you enter your user name password.</p>
+            <button id="login_button">LOGIN</button>
+        </div>
+    </div>
+</div>
+<div class="form_container">
+    <form class="sign_up_form">
+        <h2>SIGN UP</h2>
+        <div class="input_lebal">
+        <input type="text" placeholder="Full Name" />
+        <img src="photos/user.png" />
+        </div>
+        <div class="input_lebal">
+        <input type="email" placeholder="Email" />
+        <img src="photos/email.png"/>
+        </div>
+        <div class="input_lebal">
+        <input type="password" placeholder="Password" />
+        <img src="photos/password.png"/>
+        </div>
+        <button class="sign_up_submit">SIGN UP</button>
+    </form>
+    <form class="login_form">
+        <h2>LOG IN</h2>
+        <div class="input_lebal">
+        <input type="text" placeholder="Full Name" />
+        <img src="photos/user.png" />
+        </div>
+        <div class="input_lebal">
+        <input type="password" placeholder="Password" />
+        <img src="photos/password.png" />
+        </div>
+        <button class="sign_up_submit">LOGIN</button>
+    </form>
+</div>
+
+<img class="bg" src="photos/river.jpg">
+
+</body>
+</html>
