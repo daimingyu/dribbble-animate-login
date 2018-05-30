@@ -1,7 +1,7 @@
-## design_login
+# design_login
 
 ![Alt text](https://raw.githubusercontent.com/daimingyu/photos/master/login.gif)
-____
+
 ## 一、前言
 
 dribbble地址 : [Deepak Yadav - Sign Up and Login Animated](https://dribbble.com/shots/2311260-Day-1-Sign-Up-and-Login-Animated-Download-Template)
