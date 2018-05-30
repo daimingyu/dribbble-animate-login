@@ -4,8 +4,7 @@
 ____
 ## 一、前言
 
-dribbble地址 : [Deepak Yadav - Sign Up and Login Animated](https://dribbble.com/shots/2311260-Day-1-Sign-Up-and-Login-Animated-Download-Template)<br>
-作品地址：[Dai Mingyu - Dribbble Animate Login](https://github.com/daimingyu/dribbble_animate_login)
+dribbble地址 : [Deepak Yadav - Sign Up and Login Animated](https://dribbble.com/shots/2311260-Day-1-Sign-Up-and-Login-Animated-Download-Template)
 
 
 ## 二、文件夹
