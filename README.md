@@ -42,7 +42,7 @@ dribbble地址 : [Deepak Yadav - Sign Up and Login Animated](https://dribbble.co
 
 ### 3.图片下方有空白
 
-如何解决div里面img图片下方有空白的问题 : 霞光一点 https://jingyan.baidu.com/article/7082dc1c69dc6fe40a89bdfe.html
+如何解决div里面img图片下方有空白的问题 : https://jingyan.baidu.com/article/7082dc1c69dc6fe40a89bdfe.html
 
 ### 4.width与min-width联合使用
 这个div块宽度随着网页的大小变化，网页在全屏的时候div宽度也全屏，但是网页缩到无论怎么小的时候，div最小宽度也就720px。
